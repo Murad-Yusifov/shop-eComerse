@@ -21,12 +21,12 @@ const Contact = () => {
           <ul className="flex items-center">
             <li className="pr-[15px] mr-[15px]">My Wishlist</li>
             <li className="pr-[15px] mr-[15px] border-r-[1px]">Track Your Order</li>
-            <li className="pr-[15px] mr-[15px] text-sm cursor-pointer hover:text-red-500 transition-transform duration-300 hover:scale-x-[-1] transform origin-center"><FaFacebook/></li>
+            <li className="pr-[15px] mr-[15px] text-sm cursor-pointer hover:text-red-500"><FaFacebook className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
 
-            <li className="pr-[15px] mr-[15px] text-sm hover:text-red-500 cursor-pointer icon "><FaInstagram/></li>
-            <li className="pr-[15px] mr-[15px] text-sm hover:text-red-500 cursor-pointer "><FaTwitter/></li>
-            <li className="pr-[15px] mr-[15px] text-md hover:text-red-500 cursor-pointer "><LiaLinkedin/></li>
-            <li className="pr-[15px] mr-[15px] text-sm hover:text-red-500 cursor-pointer "><BsYoutube/></li>
+            <li className="pr-[15px] mr-[15px] text-sm hover:text-red-500 cursor-pointer "><FaInstagram className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
+            <li className="pr-[15px] mr-[15px] text-sm hover:text-red-500 cursor-pointer "><FaTwitter className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
+            <li className="pr-[15px] mr-[15px] text-md hover:text-red-500 cursor-pointer ">< LiaLinkedin className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
+            <li className="pr-[15px] mr-[15px] text-sm hover:text-red-500 cursor-pointer "><BsYoutube className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
           </ul>
         </nav>
       </div>
