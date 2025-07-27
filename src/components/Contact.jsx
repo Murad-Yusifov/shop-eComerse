@@ -7,9 +7,9 @@ import { LiaLinkedin } from "react-icons/lia";
 const Contact = () => {
   return (
     <header className="w-full py-[8px] flex justify-center" style={{padding:"8px 0px"}}>
-      <div className="w-3/4 flex justify-between items-center">
+      <div className="w-[90%] flex justify-between items-center px-2 mx-2">
         <div className="flex">
-          <ul className="flex">
+          <ul className="flex *:text-[14px]">
             <li className="pr-[15px] text-md mr-[15px]">About Us </li>
             <li className="pr-[15px] text-md mr-[15px]">Privacy</li>
             <li className="pr-[15px] text-md mr-[15px]">FAQ</li>
@@ -17,18 +17,18 @@ const Contact = () => {
           </ul>
         </div>
 
-        <nav className="flex">
-          <ul className="flex items-center">
+        <div className="flex">
+          <ul className="flex items-center *:text-[14px] *:text-[#74706B]">
             <li className="pr-[15px] mr-[15px]">My Wishlist</li>
-            <li className="pr-[15px] mr-[15px] border-r-[1px]">Track Your Order</li>
-            <li className="pr-[15px] mr-[15px] text-sm cursor-pointer hover:text-red-500"><FaFacebook className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
+            <li className="pr-[15px] mr-[15px] border-r-[1px] border-gray-200">Track Your Order</li>
+            <li className="pl-[14px] cursor-pointer hover:text-red-500"><FaFacebook className="transition-transform duration-300 hover:scale-x-[-1] "/></li>
 
-            <li className="pr-[15px] mr-[15px] text-sm hover:text-red-500 cursor-pointer "><FaInstagram className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
-            <li className="pr-[15px] mr-[15px] text-sm hover:text-red-500 cursor-pointer "><FaTwitter className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
-            <li className="pr-[15px] mr-[15px] text-md hover:text-red-500 cursor-pointer ">< LiaLinkedin className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
-            <li className="pr-[15px] mr-[15px] text-sm hover:text-red-500 cursor-pointer "><BsYoutube className="transition-transform duration-300 hover:scale-x-[-1] text-[18px]"/></li>
+            <li className="pl-[14px] hover:text-red-500 cursor-pointer "><FaInstagram className="transition-transform duration-300 hover:scale-x-[-1] "/></li>
+            <li className="pl-[14px] hover:text-red-500 cursor-pointer "><FaTwitter className="transition-transform duration-300 hover:scale-x-[-1] "/></li>
+            <li className="pl-[14px] text-md hover:text-red-500 cursor-pointer ">< LiaLinkedin className="text-md transition-transform duration-300 hover:scale-x-[-1] "/></li>
+            <li className="pl-[14px] hover:text-red-500 cursor-pointer "><BsYoutube className="transition-transform duration-300 hover:scale-x-[-1] "/></li>
           </ul>
-        </nav>
+        </div>
       </div>
     </header>
   );
