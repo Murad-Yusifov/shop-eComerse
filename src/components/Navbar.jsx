@@ -2,7 +2,7 @@ import React from "react";
 import { FaCartArrowDown, FaSearch, FaUser } from "react-icons/fa";
 import { Link } from "react-router";
 
-const Navbar = () => {
+const Navbar = ({setSearch}) => {
   return (
     <nav className="w-full flex justify-center *:text-[16px] *:cursor-pointer ">
       <div className="w-[85%] flex justify-between">
@@ -38,7 +38,7 @@ const Navbar = () => {
 
         <ul className="flex *:py-[31px] *:px-[13px] font-[400] *:text-[24px] items-center">
           <li className="hover:text-red-500 transition">
-            <FaSearch />
+            <FaSearch onClick={()=>setSearch((prev)=>!prev)} />
           </li>
           <li className="hover:text-red-500 transition">
             <Link to="/user">
