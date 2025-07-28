@@ -1,11 +1,12 @@
 import React from 'react'
-import Contact from '../../components/Contact'
 import Section from './components/sections/Section'
+import Carts from './components/sections/Carts'
 
 const Home = () => {
   return (
     <>
     <Section/>
+    <Carts/>
     </>
   )
 }
