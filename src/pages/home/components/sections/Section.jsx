@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Content from "../Content";
 
 const Section = () => {
   const images = [
@@ -15,9 +16,30 @@ const Section = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
-    const handleNext = () => {
-    setCurrentIndex(prev => (prev + 1) % images.length);
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
   };
+
+  // prps ile metin otur
+
+  const data = [
+    {
+      subtitle: "Fashion Sale",
+      title: "Minimal Menz Style",
+      description:
+        "Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus dignissimos facilis neque nulla earum.",
+      buttonText: "Shop Now",
+    },
+    {
+      subtitle: "Fashion Sale",
+      title: "Minimal Menz Style",
+      description:
+        "Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus dignissimos facilis neque nulla earum.",
+      buttonText: "Shop Now",
+    },
+  ];
+
+  const isEven = currentIndex % 2 === 0;
 
   return (
     <>
@@ -25,16 +47,20 @@ const Section = () => {
         className="h-screen bg-[url(${images[currentIndex]})] bg-center bg-cover bg-no-repeat flex items-center relative"
         style={{ backgroundImage: `url('${images[currentIndex]}')` }}
       >
-      <div className="">
-     
-      </div>
-         <button
-        onClick={handleNext}
-        className="absolute top-1/2 px-6 py-2 bg-white text-black font-semibold rounded shadow hover:bg-gray-200 transition"
-      >
-        Before
-      </button>
-      
+        <button
+          onClick={handleNext}
+          className="absolute top-1/2 px-6 py-2 bg-white text-black font-semibold rounded shadow hover:bg-gray-200 transition"
+        >
+          Before
+        </button>
+        <Content
+          key={isEven}
+          subtitle={data[currentIndex].subtitle}
+          title={data[currentIndex].title}
+          description={data[currentIndex].description}
+          buttonText={data[currentIndex].buttonText}
+          isEven={isEven}
+        />
 
         <button
           onClick={handleNext}
@@ -43,7 +69,6 @@ const Section = () => {
           Next
         </button>
       </div>
-
     </>
   );
 };

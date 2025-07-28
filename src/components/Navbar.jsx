@@ -4,13 +4,13 @@ import { Link } from "react-router";
 
 const Navbar = ({ setSearch }) => {
   const searchUnits = [
-    "Home",
-    "Men",
-    "Women",
-    "Baby Collection",
-    "Pages",
-    "Blog",
-    "Contact",
+    { item: "Home", link: "/" },
+    { item: "Men", link: "/men" },
+    { item: "Women", link: "/women" },
+    { item: "Baby Collection", link: "/" },
+    { item: "Pages", link: "/" },
+    { item: "Blog", link: "/" },
+    { item: "Contact", link: "/" },
   ];
   return (
     <nav className="w-full flex justify-center *:text-[16px] *:cursor-pointer ">
@@ -21,11 +21,11 @@ const Navbar = ({ setSearch }) => {
             alt="logo"
           />
         </div>
-        
+
         <ul className="flex *:py-[41px] *:px-[10px] *:text-[16px] *:font-bold">
-          {searchUnits.map((item) => (
-            <li key={item} className="hover:text-red-500 transition">
-              <Link to="/">{item}</Link>
+          {searchUnits.map((items) => (
+            <li key={items.item} className="hover:text-red-500 transition">
+              <Link to={items.link}>{items.item}</Link>
             </li>
           ))}
         </ul>
