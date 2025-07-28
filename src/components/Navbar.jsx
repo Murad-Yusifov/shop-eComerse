@@ -2,7 +2,16 @@ import React from "react";
 import { FaCartArrowDown, FaSearch, FaUser } from "react-icons/fa";
 import { Link } from "react-router";
 
-const Navbar = ({setSearch}) => {
+const Navbar = ({ setSearch }) => {
+  const searchUnits = [
+    "Home",
+    "Men",
+    "Women",
+    "Baby Collection",
+    "Pages",
+    "Blog",
+    "Contact",
+  ];
   return (
     <nav className="w-full flex justify-center *:text-[16px] *:cursor-pointer ">
       <div className="w-[85%] flex justify-between">
@@ -12,33 +21,18 @@ const Navbar = ({setSearch}) => {
             alt="logo"
           />
         </div>
+        
         <ul className="flex *:py-[41px] *:px-[10px] *:text-[16px] *:font-bold">
-          <li className="hover:text-red-500 transition">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="hover:text-red-500 transition">
-            <Link to="/">Men</Link>
-          </li>
-          <li className="hover:text-red-500 transition">
-            <Link to="/">Women</Link>
-          </li>
-          <li className="hover:text-red-500 transition">
-            <Link to="/">Baby Collection</Link>
-          </li>
-          <li className="hover:text-red-500 transition">
-            <Link to="/">Pages</Link>
-          </li>
-          <li className="hover:text-red-500 transition">
-            <Link to="/">Blog</Link>
-          </li>
-          <li className="hover:text-red-500 transition">
-            <Link to="/">Contact</Link>
-          </li>
+          {searchUnits.map((item) => (
+            <li key={item} className="hover:text-red-500 transition">
+              <Link to="/">{item}</Link>
+            </li>
+          ))}
         </ul>
 
         <ul className="flex *:py-[31px] *:px-[13px] font-[400] *:text-[24px] items-center">
           <li className="hover:text-red-500 transition">
-            <FaSearch onClick={()=>setSearch((prev)=>!prev)} />
+            <FaSearch onClick={() => setSearch((prev) => !prev)} />
           </li>
           <li className="hover:text-red-500 transition">
             <Link to="/user">
