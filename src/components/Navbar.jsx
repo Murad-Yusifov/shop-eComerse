@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaCartArrowDown, FaSearch, FaUser } from "react-icons/fa";
 import { Link } from "react-router";
 
 const Navbar = ({ setSearch }) => {
+
+   const { handleSearchClick, isSearchActive } = setSearch;
+   
+  const [visible, setVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const searchUnits = [
     { item: "Home", link: "/" },
     { item: "Men", link: "/men" },
@@ -12,38 +30,58 @@ const Navbar = ({ setSearch }) => {
     { item: "Blog", link: "/" },
     { item: "Contact", link: "/" },
   ];
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
+  };
+
   return (
-    <nav className="w-full flex justify-center *:text-[16px] *:cursor-pointer ">
-      <div className="w-[85%] flex justify-between">
-        <div className="bg-white flex items-center">
+    <nav
+      className={`w-full flex justify-center bg-white ${
+        visible ? "sticky top-0 z-50 shadow-md" : ""
+      }`}
+    >
+      <div className="w-[85%] flex justify-between items-center py-4">
+        <div>
           <img
             src="https://preview.colorlib.com/theme/capitalshop/assets/img/logo/logo.png.webp"
             alt="logo"
           />
         </div>
 
-        <ul className="flex *:py-[41px] *:px-[10px] *:text-[16px] *:font-bold">
-          {searchUnits.map((items) => (
-            <li key={items.item} className="hover:text-red-500 transition">
-              <Link to={items.link}>{items.item}</Link>
+        <ul className="flex text-[16px] font-bold">
+          {searchUnits.map((item, index) => (
+            <li
+              key={item.item}
+              className={`cursor-pointer px-4 pb-2 transition-colors duration-300 border-b-4 border-transparent hover:border-red-500 hover:text-red-500 ${
+                activeIndex === index ? "border-red-500 text-red-500" : ""
+              }`}
+              onClick={() => handleClick(index)}
+            >
+              <Link to={item.link}>{item.item}</Link>
             </li>
           ))}
         </ul>
 
-        <ul className="flex *:py-[31px] *:px-[13px] font-[400] *:text-[24px] items-center">
-          <li className="hover:text-red-500 transition">
-            <FaSearch onClick={() => setSearch((prev) => !prev)} />
+        <ul className="flex items-center text-[24px] font-normal space-x-6">
+          <li>
+            <FaSearch
+              onClick={() => handleSearchClick()}
+              className={`cursor-pointer hover:text-red-500 ${
+                isSearchActive ? "text-red-500" : ""
+              }`}
+            />
           </li>
-          <li className="hover:text-red-500 transition">
+          <li className="cursor-pointer hover:text-red-500">
             <Link to="/user">
               <FaUser />
             </Link>
           </li>
-          <li className="hover:text-red-500 transition relative group">
+          <li className="relative cursor-pointer hover:text-red-500 group">
             <Link to="/added">
               <FaCartArrowDown />
             </Link>
-            <span className="text-[20px] absolute top-0 right-0 transition duration-300 group-hover:-translate-y-1">
+            <span className="absolute top-0 right-0 text-[20px] transition duration-300 group-hover:-translate-y-1">
               0
             </span>
           </li>

@@ -46,7 +46,7 @@ const Section = () => {
       {images.map((img, index) => (
         <div
           key={index}
-          className={`absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-500 ease-in-out ${
             index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
           style={{ backgroundImage: `url('${img}')` }}
