@@ -81,7 +81,7 @@ const Navbar = ({ setSearch }) => {
             <Link to="/added">
               <FaCartArrowDown />
             </Link>
-            <span className="absolute top-0 right-0 text-[20px] transition duration-300 group-hover:-translate-y-1">
+            <span className="absolute -top-5  -right-2 text-[15px] bg-red-600 rounded-full w-[18px] h-[18px] flex justify-center items-center transition duration-300 group-hover:-translate-y-1 hover:text-white">
               0
             </span>
           </li>

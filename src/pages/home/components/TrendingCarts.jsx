@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import SingleTrendCart from "./SingleTrendCart";
 import TrendBar from "./TrendBar";
 
-const TrendingCarts = ({data}) => {
+const TrendingCarts = ({ data }) => {
+  const visibleCount = Math.min(data.length, 4);
 
-
-  const visibleCount = 4;
   const [items, setItems] = useState(data);
 
   const slide = () => {
@@ -34,10 +33,15 @@ const TrendingCarts = ({data}) => {
 
   return (
     <div className="relative w-full max-w-[1200px] mx-auto overflow-hidden ">
-      <TrendBar/>
-      <div className="flex transition-transform duration-300">
+      <TrendBar />
+      <div className="flex justify-center transition-transform duration-300">
         {items.slice(0, visibleCount).map((item, i) => (
-          <div key={i} className="w-1/4 flex-shrink-0 px-2">
+          <div
+            key={i}
+            className={`flex-shrink-0 px-2 ${
+              visibleCount === 3 ? "w-1/3" : "w-1/4"
+            }`}
+          >
             <SingleTrendCart img={item.img} text={item.text} />
           </div>
         ))}
@@ -46,13 +50,17 @@ const TrendingCarts = ({data}) => {
       {/* Buttons */}
       <button
         onClick={handlePrev}
-        className="absolute top-[60%] left-[-15px] transform -translate-y-1/2 px-3 py-1 bg-transparent z-10"
+        className={`absolute ... ${
+          visibleCount < 4 ? "top-[60%] left-0" : "top-[60%] left-[-15px]"
+        }`}
       >
         ◀
       </button>
       <button
         onClick={handleNext}
-        className="absolute top-[60%] right-[-15px] transform -translate-y-1/2 px-3 py-1 bg-transparent z-10"
+        className={`absolute transform -translate-y-1/2 px-3 py-1 bg-transparent z-10 ${
+          visibleCount < 4 ? "top-[60%] right-[-10px]" : "top-[60%] right-[-15px]"
+        }`}
       >
         ▶
       </button>

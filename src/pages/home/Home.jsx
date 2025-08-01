@@ -2,7 +2,8 @@ import React from 'react'
 import Section from './components/sections/Section'
 import Carts from './components/sections/Carts'
 import TrendingCarts from './components/TrendingCarts'
-import AllCarts from './components/sections/section3/AllCarts'
+import Cart from './components/sections/section3/Cart'
+import TrendingSection4 from './components/sections/section4/TrendingSection4'
 
 const Home = () => {
     const originalData = [
@@ -12,12 +13,27 @@ const Home = () => {
       { img: "https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/latest4.jpg", text: "Cashmere Tank + Bag" },
       { img: "https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/latest5.jpg", text: "Cashmere Tank + Bag" },
     ];
+
+    const data = [
+      {
+        img:"https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/latest6.jpg",
+        text:"Cashmere Tank + Bag"
+      },
+       {
+        img:"https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/latest7.jpg",
+        text:"Cashmere Tank + Bag"
+      }, {
+        img:"https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/latest8.jpg",
+        text:"Cashmere Tank + Bag"
+      },
+    ]
   return (
     <>
     <Section/>
     <Carts/>
     <TrendingCarts data={originalData}/>
-    <AllCarts/>
+    <Cart/>
+    <TrendingCarts data={data} />
     </>
   )
 }
