@@ -38,9 +38,7 @@ const TrendingCarts = ({ data }) => {
         {items.slice(0, visibleCount).map((item, i) => (
           <div
             key={i}
-            className={`flex-shrink-0 px-2 ${
-              visibleCount === 3 ? "w-1/3" : "w-1/4"
-            }`}
+            className='w-1/4 flex-shrink-0 px-2'
           >
             <SingleTrendCart img={item.img} text={item.text} />
           </div>
@@ -51,7 +49,7 @@ const TrendingCarts = ({ data }) => {
       <button
         onClick={handlePrev}
         className={`absolute ... ${
-          visibleCount < 4 ? "top-[60%] left-0" : "top-[60%] left-[-15px]"
+          visibleCount < 4 ? "top-[60%] left-[90px]" : "top-[60%] left-[-15px]"
         }`}
       >
         ◀
@@ -59,7 +57,7 @@ const TrendingCarts = ({ data }) => {
       <button
         onClick={handleNext}
         className={`absolute transform -translate-y-1/2 px-3 py-1 bg-transparent z-10 ${
-          visibleCount < 4 ? "top-[60%] right-[-10px]" : "top-[60%] right-[-15px]"
+          visibleCount < 4 ? "top-[60%] right-[90px]" : "top-[60%] right-[-15px]"
         }`}
       >
         ▶
