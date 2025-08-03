@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Murad-Yusifov/shop-eComerse",
+  "homepage": "https://murad-yusifov.github.io/shop-eComerse",
   "scripts": {
     "murad": "vite",
     "build": "vite build",
